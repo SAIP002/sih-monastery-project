@@ -1,0 +1,832 @@
+/* Reset */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body { 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; 
+  color: #2c3e50; 
+  background: #ffffff; 
+  background-image: url('1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Layout helpers */
+
+.hidden { 
+  display: none !important; 
+}
+
+.section { 
+  padding: 80px 0; 
+}
+
+.section h2 { 
+  font-size: 2.2rem; 
+  text-align: center; 
+  margin: 0 0 10px; 
+}
+
+.section .subtitle { 
+  text-align: center; 
+  color: #666; 
+  margin-bottom: 40px; 
+}
+
+.grid { 
+  display: grid; 
+  gap: 24px; 
+}
+
+.grid.auto { 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+}
+
+/* Navbar */
+.navbar { 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  background: rgba(255,255,255,0.95); 
+  backdrop-filter: blur(10px); 
+  border-bottom: 1px solid #eee; 
+}
+
+.nav-inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 14px 20px; 
+}
+
+.brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  font-weight: 700; 
+}
+
+.brand .logo { 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 8px; 
+  background: #4caf50; 
+  color: #fff; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  
+}
+
+.nav { 
+  list-style: none; 
+  display: flex; 
+  gap: 14px; 
+  margin: 0; 
+  padding: 0; 
+  flex-wrap: wrap; 
+}
+
+.nav a { 
+  text-decoration: none; 
+  color: #2c3e50; 
+  padding: 8px 14px; 
+  border-radius: 999px; 
+  font-weight: 600; 
+  transition: all 0.3s ease;
+}
+
+.nav a.active, .nav a:hover { 
+  background: #667eea; 
+  color: #fff; 
+}
+
+.nav-cta { 
+  display: none; 
+}
+
+/* Hero */
+.hero .media { 
+  position: relative; 
+  top:0;
+  border-radius: 18px; 
+  overflow: hidden; 
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3); 
+  min-height: 320px; 
+  background: #000; 
+
+}
+
+.hero .media video, .hero .media img { 
+  width: 100%; 
+  height:50%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+.hero .badge-row { 
+  margin-top: 18px; 
+  display: flex; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+}
+
+.badge { 
+  background: rgba(255,255,255,0.12); 
+  border: 1px solid rgba(255,255,255,0.25); 
+  padding: 8px 12px; 
+  border-radius: 999px; 
+  font-size: 0.9rem; 
+  backdrop-filter: blur(6px); 
+}
+
+/* Cards */
+.card { 
+  background: #fff; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06); 
+  transition: transform .2s ease, box-shadow .2s ease; 
+}
+
+.card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1); 
+}
+
+.card .img { 
+  position: relative; 
+  height: 180px; 
+  overflow: hidden; 
+}
+
+.card .img img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+.card .body { 
+  padding: 16px; 
+}
+
+.card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1); 
+}
+
+.card .img { 
+  position: relative; 
+  height: 180px; 
+  overflow: hidden; 
+}
+
+.card .img img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  /* ADD THIS LINE to enable a smooth transition on the image */
+  transition: transform 0.3s ease;
+}
+
+/* ADD THIS ENTIRE BLOCK to apply the zoom on hover */
+.card:hover .img img {
+  transform: scale(1.1);
+}
+
+/* Quick links */
+.quick-links .card { 
+  text-align: center; 
+  padding: 22px 18px; 
+}
+
+.icon-pill { 
+  width: 72px; 
+  height: 72px; 
+  margin: 0 auto 10px; 
+  border-radius: 50%; 
+  background: linear-gradient(45deg, #667eea, #764ba2); 
+  color: #fff; 
+  display: grid; 
+  place-items: center; 
+  font-size: 26px; 
+}
+
+/* Tabs (simulate pages) */
+.tabpage { 
+  display: none; 
+}
+
+.tabpage.active { 
+  display: block; 
+}
+
+/* Virtual Tour placeholder viewer */
+.vr-viewer { 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+  height: 420px; 
+  border-radius: 16px; 
+  position: relative; 
+  display: grid; 
+  place-items: center; 
+  color: #fff; 
+  overflow: hidden; 
+}
+
+.vr-controls { 
+  position: absolute; 
+  bottom: 14px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  display: flex; 
+  gap: 8px; 
+}
+
+.vr-btn { 
+  width: 42px; 
+  height: 42px; 
+  border-radius: 50%; 
+  border: 0; 
+  background: rgba(255,255,255,0.2); 
+  color: #fff; 
+  display: grid; 
+  place-items: center; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+}
+
+.vr-btn:hover { 
+  background: rgba(255,255,255,0.3); 
+  transform: scale(1.1);
+}
+
+.vr-hotspot { 
+  position: absolute; 
+  width: 14px; 
+  height: 14px; 
+  border-radius: 50%; 
+  background: #ff6b6b; 
+  box-shadow: 0 0 0 10px rgba(255,107,107,0); 
+  animation: pulse 2s infinite; 
+  cursor: pointer; 
+}
+
+.vr-tooltip { 
+  position: absolute; 
+  transform: translate(-50%, -130%); 
+  background: rgba(0,0,0,0.75); 
+  color: #fff; 
+  padding: 6px 10px; 
+  border-radius: 8px; 
+  font-size: 12px; 
+  white-space: nowrap; 
+  pointer-events: none; 
+  opacity: 0; 
+  transition: .2s; 
+}
+
+.vr-hotspot:hover + .vr-tooltip { 
+  opacity: 1; 
+}
+
+@keyframes pulse { 
+  0%{box-shadow:0 0 0 0 rgba(255,107,107,.55)} 
+  70%{box-shadow:0 0 0 12px rgba(255,107,107,0)} 
+  100%{box-shadow:0 0 0 0 rgba(255,107,107,0)} 
+}
+
+/* Calendar */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.calendar-layout {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.left-tabs,
+.right-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.month-tab {
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 10px 15px;
+    width: 150px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.month-tab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.month-tab.active {
+    border-color: #e91e63;
+    color: #e91e63;
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.2);
+}
+
+.month-tab i {
+    color: #e91e63;
+    font-size: 1.2rem;
+}
+
+.month-tab.active i {
+    color: #e91e63;
+}
+
+.central-panel {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+#main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    padding: 20px 20px 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-text,
+.name-text {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .calendar-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-tabs,
+    .right-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .month-tab {
+        width: 120px;
+    }
+}
+/* New styles for the events section and cards */
+.events-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.events-section h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.panel {
+    display: block; /* Changed to block */
+    max-width:100%; /* Optional: Sets a max-width for the block */
+    margin: 0 auto; /* Centers the block */
+}
+
+.block {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Added spacing between the cards */
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.block-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.block-body {
+    padding: 20px;
+    text-align: left;
+}
+
+.block-body h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.block-body p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .month-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .left-tabs, .right-tabs {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .pannel.auto {
+      /* Reverts to responsive layout for smaller screens */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+
+/* Modals */
+.modal { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(0,0,0,0.65); 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px; 
+  z-index: 2000; 
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.show { 
+  display: flex; 
+}
+
+.modal-card { 
+  background: #fff; 
+  width: min(92vw, 780px); 
+  max-height: 88vh; 
+  border-radius: 16px; 
+  overflow: auto; 
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35); 
+  animation: slideUp 0.4s ease;
+}
+
+.modal-head { 
+  padding: 16px 18px; 
+  background: linear-gradient(45deg, #667eea, #764ba2); 
+  color: #fff; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  position: sticky; 
+  top: 0; 
+  z-index: 5; 
+}
+
+.modal-body { 
+  padding: 18px; 
+}
+
+.close-x { 
+  background: rgba(255,255,255,0.25); 
+  border: 0; 
+  color: #fff; 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+}
+
+.close-x:hover { 
+  background: rgba(255,255,255,0.4); 
+  transform: scale(1.1);
+}
+
+/* Trip planner */
+.tabs { 
+  display: flex; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+.tab { 
+  border: 2px solid #667eea; 
+  color: #667eea; 
+  background: #fff; 
+  padding: 10px 16px; 
+  border-radius: 999px; 
+  cursor: pointer; 
+  font-weight: 700; 
+  transition: all 0.3s ease;
+}
+
+.tab.active, .tab:hover { 
+  background: #667eea; 
+  color: #fff; 
+}
+
+.pill { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  font-weight: 600; 
+  background: #f3f6ff; 
+  color: #3b5bdb; 
+  padding: 6px 10px; 
+  border-radius: 999px; 
+  margin: 4px 4px 4px 0;
+}
+
+/* History timeline */
+.timeline { 
+  position: relative; 
+  max-width: 900px; 
+  margin: 0 auto; 
+}
+
+.timeline::before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  left: 50%; 
+  width: 2px; 
+  background: #e74c3c; 
+  transform: translateX(-50%); 
+}
+
+.tl-item { 
+  position: relative; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+  margin: 26px 0; 
+}
+
+.tl-card { 
+  background: #fff; 
+  border-radius: 12px; 
+  padding: 16px; 
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06); 
+}
+
+.tl-year { 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%,-50%); 
+  background: #e74c3c; 
+  color: #fff; 
+  width: 60px; 
+  height: 60px; 
+  border-radius: 50%; 
+  display: grid; 
+  place-items: center; 
+  font-weight: 800; 
+  z-index: 2;
+}
+
+.tl-item:nth-child(odd) .tl-card.left { 
+  grid-column: 1; 
+}
+
+.tl-item:nth-child(odd) .tl-card.right { 
+  grid-column: 2; 
+  visibility: hidden; 
+}
+
+.tl-item:nth-child(even) .tl-card.left { 
+  grid-column: 1; 
+  visibility: hidden; 
+}
+
+.tl-item:nth-child(even) .tl-card.right { 
+  grid-column: 2; 
+}
+
+/* Footer */
+.footer { 
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); 
+  color: #fff; 
+  padding: 40px 0 16px; 
+  margin-top: 40px; 
+}
+
+.footer .cols { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 20px; 
+}
+
+.footer h3, .footer h4 { 
+  margin-bottom: 1rem; 
+  color: #e74c3c; 
+}
+
+.social { 
+  display: flex; 
+  gap: 8px; 
+}
+
+.social a { 
+  width: 40px; 
+  height: 40px; 
+  background: rgba(255,255,255,0.12); 
+  border-radius: 50%; 
+  display: grid; 
+  place-items: center; 
+  color: #fff; 
+  text-decoration: none; 
+  transition: all 0.3s ease;
+}
+
+.social a:hover { 
+  background: #e74c3c; 
+  transform: translateY(-2px);
+}
+
+.footer small { 
+  opacity: 0.8; 
+  display: block; 
+  text-align: center; 
+  margin-top: 20px; 
+}
+
+.footer p { 
+  margin: 0.5rem 0; 
+  opacity: 0.9; 
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hero { 
+    grid-template-columns: 1fr; 
+    text-align: center;
+  }
+  
+  .nav-cta { 
+    display: inline-flex; 
+  }
+  
+  .grid[style*="340px"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { 
+    padding: 0 15px; 
+  }
+  
+  .hero .title { 
+    font-size: 2.2rem; 
+  }
+  
+  .section { 
+    padding: 60px 0; 
+  }
+  
+  .section h2 { 
+    font-size: 1.8rem; 
+  }
+  
+  .nav { 
+    flex-direction: column; 
+    gap: 8px; 
+  }
+  
+  .nav-inner { 
+    flex-wrap: wrap; 
+    gap: 12px; 
+  }
+  
+  .brand { 
+    font-size: 1.1rem; 
+  }
+  
+  .tabs { 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .tab { 
+    min-width: 200px; 
+    text-align: center; 
+  }
+  
+  .cal-head { 
+    flex-direction: column; 
+    gap: 10px; 
+    text-align: center; 
+  }
+  
+  .timeline::before { 
+    left: 20px; 
+  }
+  
+  .tl-item { 
+    grid-template-columns: 1fr; 
+    margin-left: 40px; 
+  }
+  
+  .tl-year { 
+    left: 20px; 
+    transform: translateX(-50%); 
+  }
+  
+  .tl-card.left, .tl-card.right { 
+    grid-column: 1 !important; 
+    visibility: visible !important; 
+  }
+  
+  .footer .cols { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+  }
+}
