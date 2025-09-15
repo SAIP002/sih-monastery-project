@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khang Virtual Tour</title>
+    
+    <style>
+        /* Basic styles to make the Street View full-screen */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #pano {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pano"></div>
+
+    <script src="script.js"></script>
+    
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzoshttpj-P8AxW0VuWA4o8Fynt6yhhQU&callback=initPano">
+    </script>
+
+</body>
+</html>
