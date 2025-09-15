@@ -44,16 +44,95 @@ const tours = {
   enchey: { title:'Enchey Monastery', desc:'"Solitary" monastery & Cham dance.', history:'Built 1909; blessed by Lama Druptob Karpo (known for flying powers). Famous for annual Cham dance festival.', hotspots:[{x:32,y:50,t:'Prayer Wheels'},{x:60,y:42,t:'Main Shrine'},{x:82,y:58,t:'City View'}]},
 };
 
-const festivals = {
-  // YYYY-MM-DD: event
-  '2025-02-12': { name:'Losar (Tibetan New Year)', type:'Buddhist', desc:'The most important Buddhist festival in Sikkim marking the Tibetan New Year with monastery ceremonies, traditional dances, and butter lamp offerings.', highlights:['Monastery prayers','Butter lamps','Traditional dances','Family gatherings','Special feast preparations'] },
-  '2025-05-16': { name:'Buddha Purnima', type:'Buddhist', desc:'Celebrating the birth, enlightenment, and mahaparinirvana of Lord Buddha with special prayers and processions.', highlights:['Monastery processions','Meditation sessions','Vegetarian feasts','Prayer ceremonies'] },
-  '2025-06-21': { name:'Saga Dawa', type:'Buddhist', desc:'The holiest month in the Buddhist calendar observing Buddha\'s birth, enlightenment, and parinirvana.', highlights:['Prayer flag ceremonies','Pilgrimage to sacred sites','Merit-making activities','Holy month observances'] },
-  '2025-09-15': { name:'Pang Lhabsol', type:'State Festival', desc:'Unique festival dedicated to Mount Kanchenjunga, the guardian deity of Sikkim, featuring traditional mask dances.', highlights:['Traditional mask dances','Colorful costumes','Mountain worship ceremonies','Cultural performances'] },
-  '2025-10-12': { name:'Dussehra', type:'Hindu Festival', desc:'Celebrating the victory of good over evil with elaborate Durga Puja celebrations and cultural programs.', highlights:['Durga Puja celebrations','Cultural processions','Traditional performances','Community feasts'] },
-  '2025-11-01': { name:'Diwali', type:'Hindu Festival', desc:'The festival of lights celebrated with oil lamps, fireworks, and traditional sweets throughout Sikkim.', highlights:['Oil lamp lighting','Fireworks displays','Sweet distribution','House decorations'] },
-  '2025-12-25': { name:'Christmas', type:'Christian Festival', desc:'Celebrated by the Christian community with church services, carol singing, and community gatherings.', highlights:['Church services','Carol singing','Community dinners','Gift exchanges'] },
-};
+document.addEventListener('DOMContentLoaded', () => {
+    const monthTabs = document.querySelectorAll('.month-tab');
+    const mainImage = document.getElementById('main-image');
+    const festivalDate = document.getElementById('festival-date');
+    const festivalName = document.getElementById('festival-name');
+
+    // Consolidated data source for all months
+    const calendarData = {
+        january: {
+            image: "https://i.ytimg.com/vi/c6JmPhUiKjA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBcw01NU1iRNN2naNSYIFgi99qUHQ",
+            date: "14 January",
+            name: "Makar Sankranti"
+        },
+        february: {
+            image: "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/02/Losar-Festival-Ladakh.jpg?fit=1024%2C683&ssl=1",
+            date: "28 February",
+            name: "Losar"
+        },
+        march: {
+            image: "https://www.fabhotels.com/blog/wp-content/uploads/2019/08/Ram-Navami.jpg",
+            date: "25 March",
+            name: "RAMA NAVAMI"
+        },
+        april: {
+            image: "https://sikkimproject.org/wp-content/uploads/2021/09/Rituals-of-Sakewa.-Photo-_-Yawan-Rai.jpg",
+            date: "9 April",
+            name: "Sakewa (Rai community)"
+        },
+        may: {
+            image: "https://pbs.twimg.com/media/FS2pDMCacAAXklG.jpg",
+            date: "23 May",
+            name: "Buddha Purnima"
+        },
+        june: {
+            image: "https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20190319114510/DSC_0270-1024x683.jpg",
+            date: "14 June",
+            name: "Pang Lhabsol Preparations"
+        },
+        july: {
+            image: "https://www.shutterstock.com/image-photo/guru-padmasambhava-sataue-sikkim-260nw-2343811367.jpg",
+            date: "17 July",
+            name: "Guru Rinpoche’s Thunkar Tshechu"
+        },
+        august: {
+            image: "https://i0.wp.com/www.gktoday.in/wp-content/uploads/2015/08/tendong-lho-rum-faat-festival-of-ethnic-lepcha-tribe-of-sikkim-celebrated.jpg?w=1920&ssl=1",
+            date: "8 August",
+            name: "Tendong Lho Rum Faat (Lepcha Festival)"
+        },
+        september: {
+            image: "https://sikkimtourism.gov.in/Content/Pics/navigationPages/FindMoreExperience/PANG-LHABSOL.jpg",
+            date: "7 September",
+            name: "Pang Lhabsol"
+        },
+        october: {
+            image: "https://static.bankbazaar.com/images/india/infographic/dussehra-holidays.webp",
+            date: "10-20 October",
+            name: "Dasain (Vijaya Dashami)"
+        },
+        november: {
+            image: "https://media.assettype.com/english-sentinelassam%2Fimport%2Fwp-content%2Fuploads%2F2018%2F11%2FDiwali-2018-sikkim-1.jpg?w=480&dpr=2&auto=format%2Ccompress&fit=max&q=85",
+            date: "1 November",
+            name: "Tihaar (Deepawali)"
+        },
+        december: {
+            image: "https://i.natgeofe.com/k/dfc7bec2-0657-4887-81a7-6d024a8c3f70/WH-XmasTree_4x3.jpg",
+            date: "25 December",
+            name: "Christmas"
+        }
+    };
+    const displayMonth = (month) => {
+        const data = calendarData[month.toLowerCase()];
+        if (data) {
+            mainImage.src = data.image;
+            festivalDate.textContent = data.date;
+            festivalName.textContent = data.name;
+        }
+    };
+
+    monthTabs.forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            monthTabs.forEach(t => t.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            const selectedMonth = event.currentTarget.getAttribute('data-month');
+            displayMonth(selectedMonth);
+        });
+    });
+
+    displayMonth('january');
+});
 
 const monasteries = {
   rumtek: {
