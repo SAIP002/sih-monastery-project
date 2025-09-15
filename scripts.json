@@ -1,0 +1,16 @@
+[
+  {
+    "id": "gate_01",
+    "name": "Main Entrance Gate",
+    "position": { "lat": 27.2885, "lng": 88.5714 },
+    "text": "Welcome! This is the main gate of the beautiful Rumtek Monastery.",
+    "animation": "wave"
+  },
+  {
+    "id": "golden_stupa_01",
+    "name": "Golden Stupa",
+    "position": { "lat": 27.28891, "lng": 88.57144 },
+    "text": "Look here! This is the Golden Stupa, which holds sacred relics.",
+    "animation": "point"
+  }
+]
