@@ -42,6 +42,31 @@ const tours = {
   tashiding: { title:'Tashiding Monastery', desc:'Holiest monastery; Bumchu ritual.', history:'Built 1641; features sacred Thongwa Rangdol chorten. Annual Bumchu festival distributes holy water.', hotspots:[{x:35,y:48,t:'Sacred Chorten'},{x:63,y:60,t:'River Confluence'},{x:79,y:42,t:'Prayer Flags'}]},
   enchey: { title:'Enchey Monastery', desc:'"Solitary" monastery & Cham dance.', history:'Built 1909; blessed by Lama Druptob Karpo (known for flying powers). Famous for annual Cham dance festival.', hotspots:[{x:32,y:50,t:'Prayer Wheels'},{x:60,y:42,t:'Main Shrine'},{x:82,y:58,t:'City View'}]},
 };
+// Add this object to your data section
+const adventureInfo = {
+  'goechala-trek-card': {
+    title: 'Goecha La Trek',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT8sfAmK5G9CtP9IzAegJOvQ9qhavpxRjxOA&s',
+    description: "The Goechala Trek is one of the most famous and challenging treks in the Himalayas, offering spectacular views of the world's third-highest peak, Mount Kanchenjunga. The trek takes you through rhododendron forests, lush meadows, and high-altitude pastures. It’s a journey for serious trekkers seeking an exhilarating adventure and unparalleled natural beauty."
+    
+  },
+  'rafting-card': {
+    title: 'River Rafting in Teesta River',
+    image: 'https://img.traveltriangle.com/blog/wp-content/uploads/2020/02/shutterstock_1072567364.jpg',
+    description: "The Teesta River, with its turbulent rapids, offers an adrenaline-pumping experience for river rafting enthusiasts. The river flows through deep gorges and lush green valleys, providing a scenic backdrop for the thrilling adventure. It's suitable for both beginners and experienced rafters, with various grades of rapids to choose from."
+  },
+  'paragliding-card': {
+    title: 'Paragliding in Gangtok',
+    image: 'https://media1.thrillophilia.com/filestore/mnwodlvouoetuum0ax7d0s0srbzi_PARAGLYDIN.jpg',
+    description: "Soar like a bird over the rolling hills, majestic mountains, and scenic valleys of Gangtok. Paragliding offers a unique perspective of the landscape, including monasteries and verdant forests. It’s an unforgettable experience for those who love adventure and want a bird’s-eye view of Sikkim's breathtaking terrain."
+  },
+  'biking-card': {
+    title: 'Mountain Biking on the Silk Route',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUR2ENl37lLC_mXjp9rIEonPBxPc95EIB0g&s',
+    description: "Explore the historic Old Silk Route on two wheels. This thrilling mountain biking trail takes you through winding roads, ancient trade paths, and remote villages. It's a challenging but rewarding journey that combines physical activity with a deep dive into the region’s history and culture. The route offers stunning views of the Himalayan range and its pristine landscapes."
+  }
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const monthTabs = document.querySelectorAll('.month-tab');
@@ -682,31 +707,46 @@ function initializeHistory() {
 }
 }
 
-// Modal functionality
+// Find the initializeModals function
 function initializeModals() {
-  // Close buttons
-  document.querySelectorAll('[data-close]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const modalId = btn.getAttribute('data-close');
-      document.getElementById(modalId)?.classList.remove('show');
-    });
-  });
+    // ... existing modal closing logic ...
 
-  // Click outside to close
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('show');
-      }
-    });
-  });
+    // ADD THIS NEW BLOCK:
+    const adventureCards = document.querySelectorAll('#adventureGrid .card');
+    const adventureModal = document.getElementById('adventureModal');
+    const adventureModalTitle = document.getElementById('adventureModalTitle');
+    const adventureModalImage = document.getElementById('adventureModalImage');
+    const adventureModalDesc = document.getElementById('adventureModalDesc');
 
-  // Escape key to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal.show').forEach(modal => {
-        modal.classList.remove('show');
-      });
-    }
-  });
+    adventureCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const cardId = card.id;
+            const info = adventureInfo[cardId];
+
+            if (info) {
+                adventureModalTitle.textContent = info.title;
+                adventureModalImage.src = info.image;
+                adventureModalImage.alt = info.title;
+                adventureModalDesc.textContent = info.description;
+                adventureModal.classList.add('show');
+            }
+        });
+    });
+
+    // Close buttons for the new modal
+    document.querySelectorAll('[data-close="adventureModal"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            adventureModal.classList.remove('show');
+        });
+    });
+    
+    // Click outside to close for the new modal
+    if (adventureModal) {
+      adventureModal.addEventListener('click', (e) => {
+        if (e.target === adventureModal) {
+            adventureModal.classList.remove('show');
+        }
+      });
+    }
+
 }
