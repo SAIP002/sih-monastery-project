@@ -161,29 +161,32 @@ const monasteries = {
 };
 
 const hotels = [
-  { id:1, name:'Hotel Tashi Delek', loc:'M.G. Marg, Gangtok', rating:4.5, price:'₹3,500', cat:'luxury', amenities:['WiFi','Restaurant','Room Service','Mountain View'] },
-  { id:2, name:'The Elgin Nor-Khill', loc:'Tibet Road, Gangtok', rating:4.8, price:'₹8,500', cat:'luxury', amenities:['Spa','Heritage Property','Fine Dining','Concierge'] },
-  { id:3, name:'Hotel Sonam Delek', loc:'Pelling, West Sikkim', rating:4.2, price:'₹2,800', cat:'mid-range', amenities:['WiFi','Restaurant','Garden','Kanchenjunga View'] },
-  { id:4, name:'Zostel Gangtok', loc:'Development Area, Gangtok', rating:4.0, price:'₹800', cat:'budget', amenities:['Common Kitchen','Lockers','WiFi','Social Area'] },
-  { id:5, name:'Summit Newa Regency', loc:'New Market, Gangtok', rating:4.3, price:'₹4,200', cat:'mid-range', amenities:['Business Center','Restaurant','WiFi','Parking'] },
-  { id:6, name:'Bamboo Retreat', loc:'Namchi, South Sikkim', rating:4.6, price:'₹5,500', cat:'luxury', amenities:['Organic Garden','Yoga','Spa','Nature Walks'] },
+  { id:1, name:'Hotel Tashi Delek',img:"hotel1.webp", loc:'M.G. Marg, Gangtok, Enchey Monastery (2.5 km)', rating:4.5, price:'₹3,500', cat:'luxury', amenities:['WiFi','Restaurant','Room Service','Mountain View'] },
+  { id:2, name:'The Elgin Nor-Khill',img:"hotel2.jpg", loc:'Tibet Road, Gangtok, Ranka Monastery (13 km)', rating:4.8, price:'₹8,500', cat:'luxury', amenities:['Spa','Heritage Property','Fine Dining','Concierge'] },
+  { id:3, name:'Hotel Sonam Delek',img:"hotel3.jpg", loc:'Pelling, West Sikkim, Enchey Monastery (1.8 km)', rating:4.2, price:'₹2,800', cat:'mid-range', amenities:['WiFi','Restaurant','Garden','Kanchenjunga View'] },
+  { id:4, name:'Zostel Gangtok',img:"hotel4.jpg", loc:'Development Area, Gangtok, Gonjang Monastery(8 km)', rating:4.0, price:'₹800', cat:'budget', amenities:['Common Kitchen','Lockers','WiFi','Social Area'] },
+  { id:5, name:'Summit Newa Regency',img:"hotel5.jpg", loc:'New Market, Gangtok, Sangachoeling Monastery (2.1 km)', rating:4.3, price:'₹4,200', cat:'mid-range', amenities:['Business Center','Restaurant','WiFi','Parking'] },
+  { id:6, name:'Bamboo Retreat', img:"hotel6.jpeg",loc:'Namchi, South Sikkim, Rumtek Monastery(5.4 km)', rating:4.6, price:'₹5,500', cat:'luxury', amenities:['Organic Garden','Yoga','Spa','Nature Walks'] },
+  { id:7, name:'The Oasis Holiday Home & Restaurant',img:"hotel7.jpg", loc:'P.N.G School Road, Enchey Monastery (3 km)', rating:4.8, price:'₹950', cat:'budget', amenities:['WiFi','Breakfast','Room Service','Mountain View'] },
+  { id:8, name:'The Z Retreat & Spa Gangtok',img:"hotel8.jpg", loc:'Lower Bojoghari,Gojang Monastery (2.5km)', rating:4.6, price:'₹1800', cat:'budget', amenities:['WiFi','Restaurant','Room Service','Swimming Pool','Spa'] },
+  { id:9, name:'Hotel Tempo Heritage Resort',img:"hotel9.jpg", loc:'JN Road, Enchey Monastery(2 km)', rating:4.7, price:'₹2600', cat:'mid-range', amenities:['WiFi','Fitness Center','Room Service','Swimming Pool','Spa'] },
 ];
 
 const restaurants = [
-  { id:1, name:'Taste of Tibet', cuisine:'Tibetan', loc:'M.G. Marg, Gangtok', rating:4.6, price:'₹200–500', specials:['Momos (Steamed/Fried)','Thukpa (Noodle Soup)','Tingmo (Steamed Bread)','Butter Tea'] },
-  { id:2, name:"9'INE Native Cuisine", cuisine:'Sikkimese/Nepali', loc:'Deorali, Gangtok', rating:4.4, price:'₹150–400', specials:['Gundruk (Fermented Leafy Greens)','Kinema (Fermented Soybeans)','Dhindo (Traditional Porridge)','Sel Roti (Ring-shaped Bread)'] },
-  { id:3, name:'Pork House', cuisine:'Local/Continental', loc:'Tibet Road, Gangtok', rating:4.3, price:'₹250–600', specials:['Pork with Bamboo Shoots','Smoked Pork Curry','Pork Sekuwa (BBQ)','Traditional Pork Stew'] },
-  { id:4, name:"Baker's Cafe", cuisine:'Bakery/Continental', loc:'M.G. Road, Gangtok', rating:4.2, price:'₹80–250', specials:['Chocolate Croissants','Apple Pie','Fresh Bread','Local Honey Cake'] },
-  { id:5, name:'Melting Point Restaurant', cuisine:'Multi-cuisine', loc:'Lal Bazaar, Gangtok', rating:4.7, price:'₹400–800', specials:['Yak Cheese Pasta','Himalayan Trout','Chura Shapta (Yak Cheese with Chili)','Local Wine Selection'] },
+  { id:1, name:'Taste of Tibet', cuisine:'Tibetan',img:"r1.jpg", loc:'M.G. Marg, Gangtok', rating:4.6, price:'₹200–500', specials:['Momos (Steamed/Fried)','Thukpa (Noodle Soup)','Tingmo (Steamed Bread)','Butter Tea'] },
+  { id:2, name:"9'INE Native Cuisine", cuisine:'Sikkimese/Nepali',img:"r2.jpg", loc:'Deorali, Gangtok', rating:4.4, price:'₹150–400', specials:['Gundruk (Fermented Leafy Greens)','Kinema (Fermented Soybeans)','Dhindo (Traditional Porridge)','Sel Roti (Ring-shaped Bread)'] },
+  { id:3, name:'Pork House', cuisine:'Local/Continental',img:"r3.jpg", loc:'Tibet Road, Gangtok', rating:4.3, price:'₹250–600', specials:['Pork with Bamboo Shoots','Smoked Pork Curry','Pork Sekuwa (BBQ)','Traditional Pork Stew'] },
+  { id:4, name:"Baker's Cafe", cuisine:'Bakery/Continental',img:"r4.jpg", loc:'M.G. Road, Gangtok', rating:4.2, price:'₹80–250', specials:['Chocolate Croissants','Apple Pie','Fresh Bread','Local Honey Cake'] },
+  { id:5, name:'Melting Point Restaurant', cuisine:'Multi-cuisine',img:"r5.jpg", loc:'Lal Bazaar, Gangtok', rating:4.7, price:'₹400–800', specials:['Yak Cheese Pasta','Himalayan Trout','Chura Shapta (Yak Cheese with Chili)','Local Wine Selection'] },
 ];
 
 const experiences = [
-  { name:'Monastery Hopping Tour', duration:'Full Day', price:'₹2,500', info:'Visit sacred monasteries including Rumtek, Enchey, and Do-Drul Chorten with expert guides.' },
-  { name:'Kanchenjunga Sunrise Trek', duration:'2 Days', price:'₹5,000', info:'Trek to spectacular viewpoints for sunrise views of the world\'s third highest peak.' },
-  { name:'Traditional Cooking Class', duration:'Half Day', price:'₹1,500', info:'Learn to cook authentic Sikkimese dishes like momos, thukpa, and gundruk with local families.' },
-  { name:'River Rafting Adventure', duration:'Full Day', price:'₹3,500', info:'Experience thrilling white-water rafting on Teesta and Rangeet rivers with safety equipment.' },
-  { name:'Cultural Heritage Walk', duration:'Half Day', price:'₹1,200', info:'Explore Gangtok\'s cultural sites, local markets, and traditional architecture with local guides.' },
-  { name:'High Altitude Lake Tour', duration:'Full Day', price:'₹4,000', info:'Visit sacred Tsomgo Lake and Nathula Pass (permits included) with yak rides and photo stops.' },
+  { name:'Monastery Hopping Tour',img:"e1.jpg", duration:'Full Day', price:'₹2,500', info:'Visit sacred monasteries including Rumtek, Enchey, and Do-Drul Chorten with expert guides.' },
+  { name:'Kanchenjunga Sunrise Trek',img:"e2.jpg", duration:'2 Days', price:'₹5,000', info:'Trek to spectacular viewpoints for sunrise views of the world\'s third highest peak.' },
+  { name:'Traditional Cooking Class',img:"e3.jpg", duration:'Half Day', price:'₹1,500', info:'Learn to cook authentic Sikkimese dishes like momos, thukpa, and gundruk with local families.' },
+  { name:'River Rafting Adventure',img:"e4.jpg", duration:'Full Day', price:'₹3,500', info:'Experience thrilling white-water rafting on Teesta and Rangeet rivers with safety equipment.' },
+  { name:'Cultural Heritage Walk', img:"e5.jpg",duration:'Half Day', price:'₹1,200', info:'Explore Gangtok\'s cultural sites, local markets, and traditional architecture with local guides.' },
+  { name:'High Altitude Lake Tour',img:"e6.jpg", duration:'Full Day', price:'₹4,000', info:'Visit sacred Tsomgo Lake and Nathula Pass (permits included) with yak rides and photo stops.' },
 ];
 
 // Initialize everything when DOM loads
@@ -471,7 +474,7 @@ function initializeTripPlanner() {
       const c = document.createElement('article');
       c.className = 'card';
       c.innerHTML = `
-        <div class="img"><img src="https://source.unsplash.com/600x400/?hotel,room,sikkim&sig=${h.id}" alt="${h.name}"></div>
+        <div class="img"><img src="images/${h.img}" alt="${h.name}"></div>
         <div class="body">
           <h3>${h.name}</h3>
           <p><i class="fa-solid fa-location-dot"></i> ${h.loc}</p>
@@ -498,7 +501,7 @@ function initializeTripPlanner() {
       const c = document.createElement('article');
       c.className = 'card';
       c.innerHTML = `
-        <div class="img"><img src="https://source.unsplash.com/600x400/?restaurant,food,${r.cuisine.toLowerCase()}&sig=${r.id}" alt="${r.name}"></div>
+        <div class="img"><img src="images/${r.img}" alt="${r.name}"></div>
         <div class="body">
           <h3>${r.name}</h3>
           <p><span class="pill"><i class="fa-solid fa-utensils"></i> ${r.cuisine}</span></p>
@@ -522,7 +525,7 @@ function initializeTripPlanner() {
       const c = document.createElement('article');
       c.className = 'card';
       c.innerHTML = `
-        <div class="img"><img src="https://source.unsplash.com/600x400/?himalaya,trek,adventure,sikkim&sig=${Math.random()}" alt="${x.name}"></div>
+        <div class="img"><img src="images/${x.img}" alt="${x.name}"></div>
         <div class="body">
           <h3>${x.name}</h3>
           <p><span class="pill"><i class="fa-solid fa-clock"></i> ${x.duration}</span></p>
